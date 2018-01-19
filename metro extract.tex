@@ -49,30 +49,48 @@ Pilih salah satu dari masing-masing jenis data yang diproses (osm2pgsql dan impo
 
 \end{enumerate}
 Download format file
- 
-1.	Di bawah judul OSM2PGSQL, klik tombol SHAPEFILE untuk mendownload file.
-2.	Di bawah judul IMPOSM, klik tombol GeoJSON untuk mendownload file.
-3.	Temukan file yang diunduh di disk (secara default, mereka akan berada di folder unduhan mesin Anda) dan unzip mereka jika tidak dibuka secara otomatis. Harus ada dua folder, masing-masing berisi file Metro Extracts yang sesuai.
+
+\begin{enumerate}
+\item
+Di bawah judul OSM2PGSQL, klik tombol SHAPEFILE untuk mendownload file.
+\item
+Di bawah judul IMPOSM, klik tombol GeoJSON untuk mendownload file.
+\item
+Temukan file yang diunduh di disk (secara default, mereka akan berada di folder unduhan mesin Anda) dan unzip mereka jika tidak dibuka secara otomatis. Harus ada dua folder, masing-masing berisi file Metro Extracts yang sesuai.
+\end{enumerate}
 Catatan: Jika Anda menggunakan Safari sebagai browser Anda, unduhan Anda mungkin akan dibuka secara otomatis dan folder diberi nama sedikit berbeda dari yang ditunjukkan dalam tutorial ini.
 Sementara GeoJSON adalah file tunggal .geojson pada disk, satu shapefile dibuat dari file individual (.shp, .dbf, .prj, dan seterusnya), jadi jangan hapus atau pindahkan secara terpisah salah satu dari file penyusun ini agar tidak merusak shapefile dan harus mendownloadnya lagi. Jika Anda mengelola file melalui perangkat lunak SIG, komponen diperlakukan sebagai keseluruhan entitas dan diperbarui dengan tepat.
 Tambahkan shapefile OSM2PGSQL ke QGIS
 Setelah file diunduh, Anda akan memasukkannya ke dalam QGIS.
-1.	Mulai QGIS dan tampilkan peta kosong.
-2.	Pada panel Browser, navigasikan ke folder download (atau dimanapun shapefile dan GeoJSON Anda didownload) dan buka folder 'sydney_australia.osm2pgsql-shapefiles'. Jika Anda mendownload kota selain Sydney, navigasikan ke folder itu dan lebarkan isinya.
-3.	Perhatikan bahwa folder berisi tiga shapefile, dinamai dengan tipe geometri: titik, garis, dan poligon.
-4.	Klik dua kali pada layer line untuk membukanya di peta. Karena ekstrak didasarkan pada kotak pembatas persegi panjang, batas lapisan akan melampaui batas administratif sebenarnya dari sebuah kota.
- 
+\begin{enumerate}
+\item
+Mulai QGIS dan tampilkan peta kosong.
+\item
+Pada panel Browser, navigasikan ke folder download (atau dimanapun shapefile dan GeoJSON Anda didownload) dan buka folder 'sydney_australia.osm2pgsql-shapefiles'. Jika Anda mendownload kota selain Sydney, navigasikan ke folder itu dan lebarkan isinya.
+\item
+Perhatikan bahwa folder berisi tiga shapefile, dinamai dengan tipe geometri: titik, garis, dan poligon.
+\item
+Klik dua kali pada layer line untuk membukanya di peta. Karena ekstrak didasarkan pada kotak pembatas persegi panjang, batas lapisan akan melampaui batas administratif sebenarnya dari sebuah kota.
+\end{enumerate}
+
 Tambahkan peta basemap ke peta Anda
 Dengan garis-garis itu sendiri, sulit untuk mengatakan banyak tentang daerah itu. Anda bisa menambahkan basemap untuk memberi garis referensi lebih.Salah satu cara untuk menambahkan basemap adalah dengan menambahkan plug-in ke QGIS yang memungkinkan Anda memilih dari berbagai penyedia basemap dan tipe peta. Anda akan menggunakan plug-in OpenLayers; Anda perlu menginstalnya jika Anda belum memilikinya. Jika sudah memilikinya, lewati langkah instalasi.
 Instal plug-in OpenLayers
-1.	Klik menu Plugins.
-2.	Klik Manage and Install Plugins.
-3.	Pada tab All, pada kotak Search, ketik openlayers.
-4.	Klik Plugin OpenLayers, pasang, dan tutup kotak dialognya.
+\begin{enumerate}
+\item
+Klik menu Plugins.
+\item
+Klik Manage and Install Plugins.
+\item
+Pada tab All, pada kotak Search, ketik openlayers.
+\item
+Klik Plugin OpenLayers, pasang, dan tutup kotak dialognya.
 Pilih basemap
-1.	Klik menu Web, arahkan ke OpenLayers Plugin, arahkan ke OSM / Stamen, dan klik Stamen Toner / OSM. Ini menambahkan basemap hitam-putih dari data OpenStreetMap yang disediakan oleh Stamen .
- 
-2.	Jika basemap mengaburkan lapisan garis Anda, seret basemap ke bagian bawah daftar lapisan.
+\item
+Klik menu Web, arahkan ke OpenLayers Plugin, arahkan ke OSM / Stamen, dan klik Stamen Toner / OSM. Ini menambahkan basemap hitam-putih dari data OpenStreetMap yang disediakan oleh Stamen .
+\item
+Jika basemap mengaburkan lapisan garis Anda, seret basemap ke bagian bawah daftar lapisan.
+
 Shapefiles dan GeoJSONs semuanya memiliki referensi spasial WGS 84, dan yang lebih spesifik lagi, EPSG: 4326. Saat menggunakan perangkat lunak GIS, seperti QGIS atau ArcMap, Anda harus bisa melapisi lapisan OSM dengan orang lain di peta Anda (perhatikan bahwa di QGIS, Anda perlu mengaktifkan proyeksi langsung di properti proyek). Jika Anda mengalami masalah dengan penyelarasan data, tinjau dokumentasi perangkat lunak yang Anda gunakan untuk mendapatkan petunjuk tentang pemecahan masalah.
 Lihat nilai atribut ekstrak
 Lapisan baris memiliki lebih dari 100.000 fitur di dalamnya, mewakili setiap baris di OSM di wilayah ini, walaupun Anda hanya tertarik untuk memetakan jalan untuk tutorial ini. Anda dapat melihat tabel atribut untuk memahami istilah pencarian yang akan digunakan untuk membatasi tampilan hanya pada fitur tertentu.
