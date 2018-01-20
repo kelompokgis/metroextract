@@ -90,34 +90,52 @@ Pilih basemap
 Klik menu Web, arahkan ke OpenLayers Plugin, arahkan ke OSM / Stamen, dan klik Stamen Toner / OSM. Ini menambahkan basemap hitam-putih dari data OpenStreetMap yang disediakan oleh Stamen .
 \item
 Jika basemap mengaburkan lapisan garis Anda, seret basemap ke bagian bawah daftar lapisan.
+\end{enumerate}
 
 Shapefiles dan GeoJSONs semuanya memiliki referensi spasial WGS 84, dan yang lebih spesifik lagi, EPSG: 4326. Saat menggunakan perangkat lunak GIS, seperti QGIS atau ArcMap, Anda harus bisa melapisi lapisan OSM dengan orang lain di peta Anda (perhatikan bahwa di QGIS, Anda perlu mengaktifkan proyeksi langsung di properti proyek). Jika Anda mengalami masalah dengan penyelarasan data, tinjau dokumentasi perangkat lunak yang Anda gunakan untuk mendapatkan petunjuk tentang pemecahan masalah.
 Lihat nilai atribut ekstrak
 Lapisan baris memiliki lebih dari 100.000 fitur di dalamnya, mewakili setiap baris di OSM di wilayah ini, walaupun Anda hanya tertarik untuk memetakan jalan untuk tutorial ini. Anda dapat melihat tabel atribut untuk memahami istilah pencarian yang akan digunakan untuk membatasi tampilan hanya pada fitur tertentu.
 Di OSM, fitur dikenali melalui tag yang menggambarkan atribut sebagai kunci dan nilai. Kuncinya adalah kategori yang luas, seperti highway , dan nilainya memberikan rincian lebih lanjut, seperti jenis jalan atau namanya.
-1.	Di bawah Lapisan, klik kanan layer sydney_australia_osm_line dan klik Open Attribute Table.
-2.	Di dalam tabel, kolom di bagian atas mewakili kunci yang paling umum.Baris adalah fitur individu di database OSM yang direferensikan oleh nomor identifikasi OSM mereka. Saat Anda melihat nilai atribut, perhatikan bahwa sebagian besar adalah NULL , yang menunjukkan bahwa tag belum terisi.
- 
-3.	Gulir ke kanan untuk melihat bidang jalan raya dan gulir ke bawah untuk melihat nilai di bidang itu.
+\item
+Di bawah Lapisan, klik kanan layer sydney_australia_osm_line dan klik Open Attribute Table.
+\item
+Di dalam tabel, kolom di bagian atas mewakili kunci yang paling umum.Baris adalah fitur individu di database OSM yang direferensikan oleh nomor identifikasi OSM mereka. Saat Anda melihat nilai atribut, perhatikan bahwa sebagian besar adalah NULL , yang menunjukkan bahwa tag belum terisi.
+ \item
+Gulir ke kanan untuk melihat bidang jalan raya dan gulir ke bawah untuk melihat nilai di bidang itu.
+\end{enumerate}
+
 Permintaan untuk fitur jalan
 Saat Anda melihat melalui meja, Anda mungkin telah memperhatikan beberapa fitur dengan nilai jalan tol . Jalan tol adalah jalan tertinggi di suatu wilayah. Anda dapat meminta tabel atribut untuk menampilkan hanya fitur yang diklasifikasikan sebagai jalan raya dekat Lisbon.
-1.	Klik kanan layer dan klik Filter. Ini akan membuka kotak dialog di mana Anda dapat memasukkan kueri untuk memfilter lapisan.
-2.	Di daftar Fields, klik dua kali highway untuk menambahkannya ke kotak ekspresi di bawah ini. Bidang adalah istilah lain untuk kolom di tabel atribut.
-3.	Di bawah Operator, klik tombol equals .
-4.	Di bawah Nilai, klik Semua untuk mendapatkan daftar nilai yang tersedia untuk bidang jalan raya.
-5.	Klik dua kali motorway untuk menambahkannya ke ungkapan. Ekspresi Anda harus membaca: "highway" = 'motorway' .
- 
-6.	Klik tombol Uji untuk memverifikasi sintaks kueri Anda. Anda harus menerima pesan yang menunjukkan bahwa lebih dari 1.000 baris telah dikembalikan. Jika tidak, pastikan teks Anda sesuai dengan teks pada gambar.
-7.	Klik OK
+\item
+Klik kanan layer dan klik Filter. Ini akan membuka kotak dialog di mana Anda dapat memasukkan kueri untuk memfilter lapisan.
+\item
+Di daftar Fields, klik dua kali highway untuk menambahkannya ke kotak ekspresi di bawah ini. Bidang adalah istilah lain untuk kolom di tabel atribut.
+\item
+Di bawah Operator, klik tombol equals .
+\item
+Di bawah Nilai, klik Semua untuk mendapatkan daftar nilai yang tersedia untuk bidang jalan raya.
+\item
+Klik dua kali motorway untuk menambahkannya ke ungkapan. Ekspresi Anda harus membaca: "highway" = 'motorway' .
+ \item
+Klik tombol Uji untuk memverifikasi sintaks kueri Anda. Anda harus menerima pesan yang menunjukkan bahwa lebih dari 1.000 baris telah dikembalikan. Jika tidak, pastikan teks Anda sesuai dengan teks pada gambar.
+\item
+Klik OK
+\end{enumerate}
+
 Tip: Dalam beberapa kasus, melakukan kueri di QGIS mungkin gagal jika shapefile memiliki periode atau titik pada namanya. Jika ini terjadi, ganti nama shapefile untuk menghapus periode. Anda seharusnya tidak melihat ini dengan Metro Extracts karena file-nya menggunakan underscore.
 Tabel peta dan atribut sekarang menunjukkan lebih sedikit fitur karena hanya jalan raya yang ditampilkan. Fitur lain yang tidak memuaskan kueri masih ada di shapefile, tapi disembunyikan dari peta. Anda bisa mengekspor fitur, meski jika Anda ingin membuat layer baru hanya dengan jalur jalan tol. Jika Anda ingin menarik semua fitur lagi, Anda dapat menghapus kueri.
 Kesederhanaan memiliki semua fitur garis yang dikelompokkan menjadi satu lapisan garis adalah keuntungan dari format osm2pgsql, namun memerlukan kueri kinerja untuk menjadi yang paling berguna.
 Ubah simbol untuk fitur garis
 Karena jalan raya adalah jalan utama, sebaiknya jalan raya diperlihatkan dengan garis tebal. QGIS hadir dengan serangkaian gaya yang sudah terisi.Anda bisa memilih untuk menggunakan salah satunya atau membangun simbol Anda sendiri untuk menampilkan jalan raya.
-1.	Di bawah Lapisan, klik dua kali lapisan garis untuk membuka propertinya.
-2.	Klik tab Style.
-3.	Temukan simbol Motorway dalam daftar gaya dan klik itu.
-4.	Klik OK untuk menerapkan simbol.
+\item 
+Di bawah Lapisan, klik dua kali lapisan garis untuk membuka propertinya.
+\item
+Klik tab Style.
+\item
+Temukan simbol Motorway dalam daftar gaya dan klik itu.
+\item
+Klik OK untuk menerapkan simbol.
+\end{enumerate}
  
 Karena setiap fitur baris diberikan secara individual, simbolnya tumpang tindih. Sebagai gantinya, garis harus digambar sebagai satu, fitur kontinyu.Anda bisa menggunakan teknik yang disebut simbol level drawing untuk menggabungkan batasan simbol.
 1.	Buka kembali properti layer ke tab Styles.
