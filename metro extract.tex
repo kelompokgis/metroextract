@@ -26,6 +26,7 @@ Sambungan internet dengan kemampuan mendownload file Ekstrak Metro. Data Sydney 
 \item
 QGIS dan dependensinya, seperti GDAL. QGIS tersedia untuk berbagai platform, termasuk Windows dan Mac. Jika Anda perlu menginstal QGIS, ikuti petunjuk untuk sistem operasi Anda. Tutorial ditulis menggunakan QGIS 2.14 (Essen).
 \end{enumerate}
+
 \subsection {Download file ekstrak}
 \begin{enumerate}
 \item
@@ -43,12 +44,25 @@ Bagian kiri halaman memiliki daftar 200 area ekstrak metro populer yang tersedia
 Untuk memilih Sydney, Anda dapat menggulir daftar sampai Anda melihat nama ekstrak (perhatikan bahwa mereka diatur menurut negara), gunakan bilah penelusuran, atau perbesar peta di sisi kanan halaman.Setelah Anda navigasikan ke ekstrak, klik 'Sydney' untuk memilih format file.
 \item
 Setelah memilih sebuah metro, Anda akan diarahkan ke halaman yang memungkinkan Anda melihat ekstrak di peta, dan memilih format file yang akan diunduh. Ada banyak format yang tersedia, tergantung pada apa yang ingin Anda gunakan untuk data ini. Pelajari lebih lanjut tentang format file di Metro Extracts.
- 
+
+\begin{figure}[ht]
+\centrline{\includegraphics[width=0.25\textwidth]{figure/formatfile}}
+\caption{download format file}
+\label {formatfile}
+\end{figure}
+
+
 \item
 Pilih salah satu dari masing-masing jenis data yang diproses (osm2pgsql dan imposm) pada halaman ekstrak. Masing-masing format file ini memiliki dua pilihan yang berbeda: GeoJSON atau Shapefile. Demi tutorial ini, kita akan menggunakan salah satu dari setiap pilihan untuk melihat perbedaan antara jenis ekstrak OSM yang berbeda serta format file data spasial yang berbeda.
 
 \end{enumerate}
-Download format file
+\submenu{Download format file}
+
+\begin{figure}[ht]
+\centrline{\includegraphics[width=0.25\textwidth]{figure/downloadfile}}
+\caption{download filemap}
+\label {downloadfile}
+\end{figure}
 
 \begin{enumerate}
 \item
@@ -60,7 +74,8 @@ Temukan file yang diunduh di disk (secara default, mereka akan berada di folder 
 \end{enumerate}
 Catatan: Jika Anda menggunakan Safari sebagai browser Anda, unduhan Anda mungkin akan dibuka secara otomatis dan folder diberi nama sedikit berbeda dari yang ditunjukkan dalam tutorial ini.
 Sementara GeoJSON adalah file tunggal .geojson pada disk, satu shapefile dibuat dari file individual (.shp, .dbf, .prj, dan seterusnya), jadi jangan hapus atau pindahkan secara terpisah salah satu dari file penyusun ini agar tidak merusak shapefile dan harus mendownloadnya lagi. Jika Anda mengelola file melalui perangkat lunak SIG, komponen diperlakukan sebagai keseluruhan entitas dan diperbarui dengan tepat.
-Tambahkan shapefile OSM2PGSQL ke QGIS
+
+\subsection{Tambahkan shapefile OSM2PGSQL ke QGIS}
 Setelah file diunduh, Anda akan memasukkannya ke dalam QGIS.
 \begin{enumerate}
 \item
@@ -73,9 +88,16 @@ Perhatikan bahwa folder berisi tiga shapefile, dinamai dengan tipe geometri: tit
 Klik dua kali pada layer line untuk membukanya di peta. Karena ekstrak didasarkan pada kotak pembatas persegi panjang, batas lapisan akan melampaui batas administratif sebenarnya dari sebuah kota.
 \end{enumerate}
 
-Tambahkan peta basemap ke peta Anda
+\begin{figure}[ht]
+\centrline{\includegraphics[width=0.25\textwidth]{figure/filepeta}}
+\caption{gambar file peta}
+\label {filepeta}
+\end{figure}
+
+\subsection{Tambahkan peta basemap ke peta Anda}
 Dengan garis-garis itu sendiri, sulit untuk mengatakan banyak tentang daerah itu. Anda bisa menambahkan basemap untuk memberi garis referensi lebih.Salah satu cara untuk menambahkan basemap adalah dengan menambahkan plug-in ke QGIS yang memungkinkan Anda memilih dari berbagai penyedia basemap dan tipe peta. Anda akan menggunakan plug-in OpenLayers; Anda perlu menginstalnya jika Anda belum memilikinya. Jika sudah memilikinya, lewati langkah instalasi.
-Instal plug-in OpenLayers
+
+\subsubsection{Instal plug-in OpenLayers}
 \begin{enumerate}
 \item
 Klik menu Plugins.
@@ -85,7 +107,16 @@ Klik Manage and Install Plugins.
 Pada tab All, pada kotak Search, ketik openlayers.
 \item
 Klik Plugin OpenLayers, pasang, dan tutup kotak dialognya.
-Pilih basemap
+\end{enumerate}
+
+\subsubsection{Pilih basemap}
+
+\begin{figure}[ht]
+\centrline{\includegraphics[width=0.25\textwidth]{figure/osmstatement}}
+\caption{memilih basemap}
+\label {osmstatement}
+\end{figure}
+
 \item
 Klik menu Web, arahkan ke OpenLayers Plugin, arahkan ke OSM / Stamen, dan klik Stamen Toner / OSM. Ini menambahkan basemap hitam-putih dari data OpenStreetMap yang disediakan oleh Stamen .
 \item
@@ -93,18 +124,27 @@ Jika basemap mengaburkan lapisan garis Anda, seret basemap ke bagian bawah dafta
 \end{enumerate}
 
 Shapefiles dan GeoJSONs semuanya memiliki referensi spasial WGS 84, dan yang lebih spesifik lagi, EPSG: 4326. Saat menggunakan perangkat lunak GIS, seperti QGIS atau ArcMap, Anda harus bisa melapisi lapisan OSM dengan orang lain di peta Anda (perhatikan bahwa di QGIS, Anda perlu mengaktifkan proyeksi langsung di properti proyek). Jika Anda mengalami masalah dengan penyelarasan data, tinjau dokumentasi perangkat lunak yang Anda gunakan untuk mendapatkan petunjuk tentang pemecahan masalah.
-Lihat nilai atribut ekstrak
+
+\subsection{Lihat nilai atribut ekstrak}
+
 Lapisan baris memiliki lebih dari 100.000 fitur di dalamnya, mewakili setiap baris di OSM di wilayah ini, walaupun Anda hanya tertarik untuk memetakan jalan untuk tutorial ini. Anda dapat melihat tabel atribut untuk memahami istilah pencarian yang akan digunakan untuk membatasi tampilan hanya pada fitur tertentu.
 Di OSM, fitur dikenali melalui tag yang menggambarkan atribut sebagai kunci dan nilai. Kuncinya adalah kategori yang luas, seperti highway , dan nilainya memberikan rincian lebih lanjut, seperti jenis jalan atau namanya.
 \item
 Di bawah Lapisan, klik kanan layer sydney_australia_osm_line dan klik Open Attribute Table.
 \item
 Di dalam tabel, kolom di bagian atas mewakili kunci yang paling umum.Baris adalah fitur individu di database OSM yang direferensikan oleh nomor identifikasi OSM mereka. Saat Anda melihat nilai atribut, perhatikan bahwa sebagian besar adalah NULL , yang menunjukkan bahwa tag belum terisi.
+
+\begin{figure}[ht]
+\centrline{\includegraphics[width=0.25\textwidth]{figure/tabelosm}}
+\caption{tabel database osm}
+\label {tabelosm}
+\end{figure}
+
  \item
 Gulir ke kanan untuk melihat bidang jalan raya dan gulir ke bawah untuk melihat nilai di bidang itu.
 \end{enumerate}
 
-Permintaan untuk fitur jalan
+\subsection{Permintaan untuk fitur jalan}
 Saat Anda melihat melalui meja, Anda mungkin telah memperhatikan beberapa fitur dengan nilai jalan tol . Jalan tol adalah jalan tertinggi di suatu wilayah. Anda dapat meminta tabel atribut untuk menampilkan hanya fitur yang diklasifikasikan sebagai jalan raya dekat Lisbon.
 \item
 Klik kanan layer dan klik Filter. Ini akan membuka kotak dialog di mana Anda dapat memasukkan kueri untuk memfilter lapisan.
@@ -123,6 +163,7 @@ Klik OK
 \end{enumerate}
 
 Tip: Dalam beberapa kasus, melakukan kueri di QGIS mungkin gagal jika shapefile memiliki periode atau titik pada namanya. Jika ini terjadi, ganti nama shapefile untuk menghapus periode. Anda seharusnya tidak melihat ini dengan Metro Extracts karena file-nya menggunakan underscore.
+
 Tabel peta dan atribut sekarang menunjukkan lebih sedikit fitur karena hanya jalan raya yang ditampilkan. Fitur lain yang tidak memuaskan kueri masih ada di shapefile, tapi disembunyikan dari peta. Anda bisa mengekspor fitur, meski jika Anda ingin membuat layer baru hanya dengan jalur jalan tol. Jika Anda ingin menarik semua fitur lagi, Anda dapat menghapus kueri.
 Kesederhanaan memiliki semua fitur garis yang dikelompokkan menjadi satu lapisan garis adalah keuntungan dari format osm2pgsql, namun memerlukan kueri kinerja untuk menjadi yang paling berguna.
 Ubah simbol untuk fitur garis
