@@ -179,30 +179,51 @@ Klik OK untuk menerapkan simbol.
 \end{enumerate}
  
 Karena setiap fitur baris diberikan secara individual, simbolnya tumpang tindih. Sebagai gantinya, garis harus digambar sebagai satu, fitur kontinyu.Anda bisa menggunakan teknik yang disebut simbol level drawing untuk menggabungkan batasan simbol.
-1.	Buka kembali properti layer ke tab Styles.
-2.	Klik tombol Advanced, dan klik Symbol levels.
-3.	Centang Aktifkan tingkat simbol.
-4.	Klik OK pada semua kotak dialog.
- 
+\item
+Buka kembali properti layer ke tab Styles.
+\item
+Klik tombol Advanced, dan klik Symbol levels.
+\item
+Centang Aktifkan tingkat simbol.
+\item 
+Klik OK pada semua kotak dialog.
+\end{enumerate}
+
 Perhatikan bahwa ada fungsi kartografi lainnya pada tab Styles untuk memperbaiki tampilan lapisan garis, termasuk transparansi. Anda bisa bereksperimen dengan ini sendiri.
 Tambahkan file GeoJSON IMPOSM ke QGIS
 Sejauh ini Anda telah menggunakan shapefile osm2pgsql, tapi Anda juga mendownload salah satu file GeoJSON yang tidak masuk akal. Selanjutnya, Anda akan menambahkan file itu ke QGIS.
 Proses ekstraksi imposm menghasilkan serangkaian lapisan individu yang diberi nama oleh tema yang berbeda, seperti bangunan dan tempat. Anda juga dapat melihat file dengan -gen ditambahkan ke namanya, menunjukkan bahwa fitur telah digeneralisasi, atau disederhanakan. Karena fitur di lapisan imposm sudah dikategorikan berdasarkan atribut, kemungkinan besar Anda perlu menjalankan kueri Anda sendiri untuk menampilkan fitur yang Anda inginkan. Misalnya, jika ingin bekerja dengan jalan, Anda bisa menemukannya sudah dikelompokkan di lapisan jalan.
-1.	Pada panel Browser, buka folder sydney_australia.imposm-geojson.
-2.	Tambahkan file sydney_australia_places GeoJSON ke peta.
+\item 
+Pada panel Browser, buka folder sydney_australia.imposm-geojson.
+\item 
+Tambahkan file sydney_australia_places GeoJSON ke peta.
+\end{enumerate}
+
 Dalam proses imposm, pengkategorian fitur ke lapisan tertentu ditentukan oleh daftar dan hierarki dalam file JSON . Dalam beberapa kasus, ini dapat menyebabkan tag OSM tertentu berada di beberapa bagian dari beberapa lapisan. Jika Anda tidak dapat menemukan nilai atribut tertentu di lapisan pertama yang Anda periksa, lihatlah file imposm lain, atau kembali dan ekspor dari lapisan osm2pgsql.
 Ubah simbol untuk lapisan tempat
 Fitur di lapisan tempat digambar dengan satu simbol, namun Anda dapat menggunakan nilai atribut untuk menggambarnya dalam kategori dengan simbol yang berbeda untuk nilai tertentu.
-1.	Buka properti lapisan tempat.
-2.	Klik tab Style.
-3.	Di bawah Single Symbol, klik Categorized untuk mengubah metode menggambar untuk menggambar fitur berdasarkan kategori.
-4.	Untuk Kolom, klik type untuk mengatur bidang type sebagai bidang yang berisi nilai yang akan digunakan untuk menggambar fitur.
-5.	Klik Klasifikasikan di bawah kotak. Ini menambahkan semua nilai unik pada bidang jenis dan memberi mereka simbol yang terpisah.
-6.	Jika ada simbol tanpa nilai atau entri legenda, sorotnya dalam daftar dan klik Delete.
-7.	Untuk membuat simbol kota lebih besar dan lebih menonjol, klik kanan dalam daftar dan klik Change size. Atur ukuran menjadi 5.
-8.	Anda bisa bereksperimen dengan warna dan ukuran simbol untuk membuat perbedaan poin tampak seperti yang Anda inginkan.
-9.	Klik OK saat Anda selesai kembali ke peta dan melihat perubahan Anda.
-10.	Opsional, simpan proyek Anda saat Anda selesai.
+\item
+Buka properti lapisan tempat.
+\item
+Klik tab Style.
+\item
+Di bawah Single Symbol, klik Categorized untuk mengubah metode menggambar untuk menggambar fitur berdasarkan kategori.
+\item
+Untuk Kolom, klik type untuk mengatur bidang type sebagai bidang yang berisi nilai yang akan digunakan untuk menggambar fitur.
+\item
+Klik Klasifikasikan di bawah kotak. Ini menambahkan semua nilai unik pada bidang jenis dan memberi mereka simbol yang terpisah.
+\item
+Jika ada simbol tanpa nilai atau entri legenda, sorotnya dalam daftar dan klik Delete.
+\item
+Untuk membuat simbol kota lebih besar dan lebih menonjol, klik kanan dalam daftar dan klik Change size. Atur ukuran menjadi 5.
+\item
+Anda bisa bereksperimen dengan warna dan ukuran simbol untuk membuat perbedaan poin tampak seperti yang Anda inginkan.
+\item
+Klik OK saat Anda selesai kembali ke peta dan melihat perubahan Anda.
+\item
+Opsional, simpan proyek Anda saat Anda selesai.
+\end{enumerate}
+
 Di luar QGIS di desktop, ada banyak alat berbasis web yang dapat Anda gunakan untuk menampilkan GeoJSON. Beberapa situs web yang bisa Anda gunakan tanpa scripting termasuk geojson.io dan situs GitHub . Tidak semua aplikasi mendukung sejumlah besar fitur atau pengeditan langsung GeoJSON, jadi Anda mungkin perlu mengkonversi ke format lain. Konsultasikan dokumentasi untuk perangkat lunak yang Anda gunakan untuk mempelajari lebih lanjut tentang kemampuan dan keterbatasannya.
 Ringkasan tutorial dan kota baru untuk Metro Extracts
 Dalam tutorial ini, Anda mendownload berbagai format file dari Metro Extracts, menambahkan lapisan ke QGIS, dan melakukan query dan mengatur simbol untuk fitur. Anda harus memiliki gagasan yang lebih baik tentang isi setiap unduhan sehingga Anda dapat memutuskan mana yang paling sesuai untuk proyek Anda. Untuk mempelajari cara membuat ekstrak ubahsuaian, ikuti tutorial ini.
