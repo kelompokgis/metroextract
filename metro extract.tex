@@ -225,7 +225,8 @@ Opsional, simpan proyek Anda saat Anda selesai.
 \end{enumerate}
 
 Di luar QGIS di desktop, ada banyak alat berbasis web yang dapat Anda gunakan untuk menampilkan GeoJSON. Beberapa situs web yang bisa Anda gunakan tanpa scripting termasuk geojson.io dan situs GitHub . Tidak semua aplikasi mendukung sejumlah besar fitur atau pengeditan langsung GeoJSON, jadi Anda mungkin perlu mengkonversi ke format lain. Konsultasikan dokumentasi untuk perangkat lunak yang Anda gunakan untuk mempelajari lebih lanjut tentang kemampuan dan keterbatasannya.
-Ringkasan tutorial dan kota baru untuk Metro Extracts
+
+\subsection {Ringkasan tutorial dan kota baru untuk Metro Extracts}
 Dalam tutorial ini, Anda mendownload berbagai format file dari Metro Extracts, menambahkan lapisan ke QGIS, dan melakukan query dan mengatur simbol untuk fitur. Anda harus memiliki gagasan yang lebih baik tentang isi setiap unduhan sehingga Anda dapat memutuskan mana yang paling sesuai untuk proyek Anda. Untuk mempelajari cara membuat ekstrak ubahsuaian, ikuti tutorial ini.
 
 \subsection{Memilih Format File di Metro Extract}
@@ -238,6 +239,7 @@ Berikut ini adalah penjelasan singkat tentang tipe data: Format yang kurang dipr
 Untuk sebagian besar alur kerja pembuatan map, shapefile atau GeoJSON bekerja dengan baik karena ini dapat ditambahkan secara langsung ke banyak aplikasi perangkat lunak. 
 Jika Anda ingin menambahkan data ini ke peta web, GeoJSON lebih diutamakan. Semua shapefiles yang diekstrak dan GeoJSONs menggunakan EPSG: 4326 untuk proyeksi.
 
-Data split by geometri
-Dalam data split ini juga bekerja dengan format file OSM2PGSQLdapat memisahkan data OpenStreetMap dari Metro Extract menjadi tiga file: garis, titik, dan poligon. Hal ini juga dapat membuat fitur dalam menampilkan dengan geometri tertentu dengan sederhana, namun setiap fitur akan mencakup semua dari berbagai tag OSM. 
+\subsection{Data split by geometri}
+Dalam data split ini juga bekerja dengan format file OSM2PGSQL dapat memisahkan data OpenStreetMap dari Metro Extract menjadi tiga file: garis, titik, dan poligon. 
+Hal ini juga dapat membuat fitur dalam menampilkan dengan geometri tertentu dengan sederhana, namun setiap fitur akan mencakup semua dari berbagai tag OSM. 
 
