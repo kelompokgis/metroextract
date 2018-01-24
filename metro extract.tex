@@ -243,3 +243,21 @@ Jika Anda ingin menambahkan data ini ke peta web, GeoJSON lebih diutamakan. Semu
 Dalam data split ini juga bekerja dengan format file OSM2PGSQL dapat memisahkan data OpenStreetMap dari Metro Extract menjadi tiga file: garis, titik, dan poligon. 
 Hal ini juga dapat membuat fitur dalam menampilkan dengan geometri tertentu dengan sederhana, namun setiap fitur akan mencakup semua dari berbagai tag OSM. 
 
+\subsection{Data split by OSM tags}
+Dalam format file IMPOSM adalah format file paling rapi yang ditawarkan di Metro Extracts. 
+Format ini dapat menghasilkan beberapa file, dipisahkan oleh tag OSM dan diurutkan menjadi tipe yang tersusun seperti:
+
+Batas administratif
+Aeroways
+Fasilitas
+Bangunan
+Penggunaan lahan
+Tempat
+Jalan
+Daerah transportasi
+Daerah Air
+Jalan air
+
+Penamaan untuk lapisan ini berasal langsung dari OpenStreetMap dan mungkin membingungkan jika Anda tidak terbiasa dengan tag OSM.
+Berikut informasi lebih lanjut tentang bagaimana tag bekerja: http://wiki.openstreetmap.org/wiki/Map_Features.
+
